@@ -42,7 +42,7 @@ int main()
         cout<<digest<<endl;
         cout<<"Please keep your password in mind."<<endl;
         fstream file1;
-        file1.open("C:\\Users\\87229\\Desktop\\Key.txt", ios::binary | ios::out);
+        file1.open("C:\\Key.txt", ios::binary | ios::out);
         bitset<8*b> buffer;
         buffer = charToBitset((unsigned char*)digest.c_str());
         file1.write((char*)&buffer,sizeof(buffer));
@@ -68,7 +68,7 @@ int main()
             if(ch2 == 'n')
             {
                 fstream file1;
-                file1.open("C:\\Users\\87229\\Desktop\\Key.txt", ios::binary | ios::out);
+                file1.open("C:\\Key.txt", ios::binary | ios::out);
                 file1.write((char*)Key,sizeof(Key));
                 file1.close();
                 ok = false;
@@ -83,7 +83,7 @@ int main()
             keys.erase(remove(keys.begin(), keys.end(), ' '), keys.end());
             cout<<keys<<endl;
             fstream file1;
-            file1.open("C:\\Users\\87229\\Desktop\\Key.txt", ios::binary | ios::out);
+            file1.open("C:\\Key.txt", ios::binary | ios::out);
             bitset<8*b> buffer;
             buffer = charToBitset((unsigned char*)keys.c_str());
             file1.write((char*)&buffer,sizeof(buffer));
@@ -101,7 +101,7 @@ int main()
 
     fstream file1;
     char temp[b];
-	file1.open("C:\\Users\\87229\\Desktop\\Key.txt", ios::binary | ios::in);
+	file1.open("C:\\Key.txt", ios::binary | ios::in);
 	file1.read(temp, sizeof(temp));
 	file1.close();
     cout<<"Now generated keys are as follows:"<<endl;
@@ -109,14 +109,14 @@ int main()
         cout<<hex<<(Word)(unsigned char)temp[i]<<" ";
     cout<<endl;
     Sleep(500);
-    cout<<"And keys are saved in C:\\Users\\87229\\Desktop\\Key.txt"<<endl;
+    cout<<"And keys are saved in C:\\Key.txt"<<endl;
     Sleep(300);
 
     //读取明文plaintext.txt
     ifstream in;
 	ofstream out;
-	in.open("C:\\Users\\87229\\Desktop\\plaintext.txt", ios::in | ios::binary);
-	out.open("C:\\Users\\87229\\Desktop\\ciphertext.txt", ios::out| ios::binary);
+	in.open("C:\\plaintext.txt", ios::in | ios::binary);
+	out.open("C:\\ciphertext.txt", ios::out| ios::binary);
 	in.seekg(0, in.end);   //追溯到流的尾部
     int length = in.tellg();  //获取流的长度
     in.seekg(0, in.beg);  //回到流的头部
@@ -161,8 +161,8 @@ int main()
 	Sleep(500);
 
 	// 解密 ciphertext.txt，并写入confirm plaintext.txt
-	in.open("C:\\Users\\87229\\Desktop\\ciphertext.txt",ios::in | ios::binary);
-	out.open("C:\\Users\\87229\\Desktop\\confirm plaintext.txt", ios::out| ios::binary);
+	in.open("C:\\ciphertext.txt",ios::in | ios::binary);
+	out.open("C:\\confirm plaintext.txt", ios::out| ios::binary);
 	char* cipher = new char [length]();
 	if (in.is_open()) {
 		cout << "Now reading ciphertext.txt......" << endl;
