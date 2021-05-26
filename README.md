@@ -10,14 +10,15 @@ And this cpp will read ciphertext.txt, and decrypt it, and generate a confirm pl
 
 to verify the correctness of encryption and decrption mode.
 
-Also the cpp also has the normal encryption and decryption.(In the bottom of cpp)
+Also the cpp also has the normal encryption and decryption. ( In the bottom of cpp )
 
 I use MD5 to generate Keys with your password.
 
-If u don't want like this, u can ask generate keys ramdomly or type manually.
+If u dunt want like this, u can ask generate keys ramdomly or type manually.
 
 Thats's all.
 
 Thanks for commenting and correcting.
 
 Attention : the keys are in hex.
+             And edit your ciphertext.txt in C:/ in advance
